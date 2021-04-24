@@ -1,0 +1,31 @@
+{
+  "name": "moneymanager-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "connect-redis": "^5.1.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.12.5",
+    "nodemon": "^2.0.7",
+    "path": "^0.12.7",
+    "redis": "^3.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devangrajarora/MoneyManager-API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devangrajarora/MoneyManager-API/issues"
+  },
+  "homepage": "https://github.com/devangrajarora/MoneyManager-API#readme"
+}
