@@ -34,7 +34,7 @@ login = async(req, res) => {
         email = email.trim();
 
         let user = await users.findOne({"email": email}).exec();
-        
+
         if(!user){
             return res.sendError(`User not registered`);
         }
@@ -50,11 +50,20 @@ login = async(req, res) => {
 
     } catch(err) {
 
-        return res.sendError('Login unsuccessful', err);
+        return res.sendError(`Login unsuccessful`, err);
     }    
+}
+
+logout = async (req, res) => {
+    try {
+        req.session.destroy((err) => err ? res.sendError(`Logout failed`) : res.sendResponse(`Logged out`) );
+    } catch (err) {
+        return res.sendError(err, `Logout failed`);
+    }
 }
 
 module.exports = {
     register,
-    login
+    login,
+    logout
 }
