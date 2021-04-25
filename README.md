@@ -1,5 +1,5 @@
 # MoneyManager-API
 
-- [ ] CRUD routes
+- [x] CRUD routes
 - [ ] Auth changes
 - [ ] Charts and graphs

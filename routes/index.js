@@ -17,5 +17,6 @@ router.post('/logout', auth.logout);
 router.get('/', user.listAllRecords);
 router.post('/addRecord', user.addRecord);
 router.post('/deleteRecord', user.deleteRecord);
+router.post('/updateRecord', user.updateRecord);
 
 module.exports = router;

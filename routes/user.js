@@ -73,8 +73,35 @@ deleteRecord =  async(req, res) => {
     } 
 }
 
+updateRecord =  async(req, res) => {
+    
+    try {
+
+        let {record_id,cost, category, title, details} = req.body;
+        const user_id = new ObjectID(req.session.user_id);
+        record_id = new ObjectID(record_id);
+
+        let result = await users.findOneAndUpdate(
+            {'_id': user_id, 'records.record_id': record_id}, 
+            { $set : { 
+                'recordsstuff.$.cost': cost,     
+                'records.$.category': category,     
+                'records.$.title': title,
+                'records.$.details': details,     
+            }},
+            { new: true, useFindAndModify: false }
+        );
+
+        return res.sendResponse(result); 
+    
+    } catch(e) {
+        return res.sendError(`Couldn't update record`, e);
+    } 
+}
+
 module.exports = {
     listAllRecords,
     addRecord,
-    deleteRecord
+    deleteRecord,
+    updateRecord
 }
