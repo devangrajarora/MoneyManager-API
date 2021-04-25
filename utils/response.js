@@ -1,5 +1,5 @@
 module.exports = (req, res, next) => {    
-    res.sendError = (err, msg = "Internal Server Error") => {
+    res.sendError = (msg = "Internal Server Error", err) => {
         err && console.log(`[ERROR]: ${err}`)
         res.send({
             success: false,

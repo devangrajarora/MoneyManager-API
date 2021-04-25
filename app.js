@@ -26,7 +26,7 @@ app.use(
 );
 
 app.use(response);
-app.use('/api', routes);
+app.use('/', routes);
 
 db.connectMongo();
 
